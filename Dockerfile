@@ -1,4 +1,5 @@
-#
+
+
 # OpenJDK Java 6 JDK Dockerfile
 #
 # https://github.com/dockerfile/java
@@ -12,11 +13,12 @@ FROM ubuntu
 RUN \
   apt-get update && \
   apt-get install -y openjdk-6-jdk && \
-  apt-get install -y tomcat6 tomcat6-admin && \
   rm -rf /var/lib/apt/lists/*
 
 # Define working directory.
-WORKDIR /data
+RUN mkdir /arpith
+
+WORKDIR /arpith
 
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-6-openjdk-amd64
